@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-!!80le!ss0di)ghaqv-t@c-1^fv6vwqvl826ta8lud@k^la3c9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".vercel.app",".onrender.com"]
 
 
 # Application definition
@@ -51,11 +51,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "instagram.urls"
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR.parent, "templates")],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -66,7 +65,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = "instagram.wsgi.application"
 
 

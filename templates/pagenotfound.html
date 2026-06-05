@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Resource Not Found</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 100px;
+            margin: 0;
+            color: #dc3545; /* Red color for error */
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 15px 0;
+            color: #212529;
+        }
+
+        p {
+            color: #6c757d;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #0d6efd;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0b5ed7;
+        }
+
+        .api-details {
+            margin-top: 35px;
+            padding: 15px;
+            background-color: #212529;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #20c997;
+            text-align: left;
+            overflow-x: auto;
+        }
+
+        .api-details span {
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>404</h1>
+        <h2>Resource Not Found</h2>
+        <p>The page or API endpoint you are looking for doesn't exist, has been moved, or is temporarily unavailable.</p>
+        
+        <a href="/" class="btn">Return to Homepage</a>
+
+        <div class="api-details">
+            <span>></span> Error: <span>Not Found</span><br>
+            <span>></span> Status: <span>404</span><br>
+            <span>></span> Endpoint: <span id="error-path">/api/v1/requested-resource</span>
+        </div>
+    </div>
+
+    <script>
+        // Example: If passing the failed URL via query parameter (e.g., ?path=/api/users)
+        const urlParams = new URLSearchParams(window.location.search);
+        const failedPath = urlParams.get('path');
+        
+        if (failedPath) {
+            document.getElementById('error-path').textContent = failedPath;
+        }
+    </script>
+
+</body>
+</html>
