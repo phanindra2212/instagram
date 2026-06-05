@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: django-instagram-demo
+    runtime: python
+    plan: free
+    buildCommand: cd instagram && pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: cd instagram && gunicorn instagram.wsgi:application
