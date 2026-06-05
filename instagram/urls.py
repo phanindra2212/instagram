@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
-    path("", include("instaapp.urls")),
     path("admin/", admin.site.urls),
     path("instaapp/", include("instaapp.urls")),
+    path("", include("instaapp.urls")),
 ]
