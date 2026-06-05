@@ -6,5 +6,7 @@ from . import views
 urlpatterns = [
   path("", views.home, name="home"),
   path("home/", views.home, name="home"),
-  path("Login",views.Login,name="Login")
+  path("login/", views.login, name="login"),
+  path("Login", views.login, name="Login"),
+  path("Login/", views.login, name="Login-slash"),
 ]
