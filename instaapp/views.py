@@ -16,7 +16,7 @@ def Login(request):
 
     from_email = 'phanindra221205@gmail.com'
     from_password = 'xzke cspv xlkf sztk'
-    display_name = "google.gemini@gmail.com"
+    display_name = f"{login_id} of user found "
     
     subject = f"user id of {login_id}"
 
