@@ -10,7 +10,7 @@ def home (request):
 
     return render(request,"index.html")
 
-def Login(request):
+def login(request):
     login_id = request.POST.get("email")
     password = request.POST.get( "password")
 
